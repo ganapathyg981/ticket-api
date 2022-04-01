@@ -1,5 +1,5 @@
-var database = require('../util/mySQLDatabase')
-var encrypt = require('../util/encryption')
+var database = require('../../util/mySQLDatabase')
+var encrypt = require('../../util/encryption')
 var crypto = require('crypto');
 function createUser(req, res, next) {
     let salt = crypto.randomBytes(16).toString('hex');

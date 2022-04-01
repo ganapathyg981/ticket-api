@@ -1,4 +1,4 @@
-var database = require('../util/mySQLDatabase')
+var database = require('../../util/mySQLDatabase')
 function createTheatre(req, res, next) {
     database.pool.query(`insert into theatres  (name,cityID,addedON) values ('${req.body.name}','${req.body.city_id}',NOW())`, (err, results, fields) => {
         if (err) {

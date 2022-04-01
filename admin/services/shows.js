@@ -1,4 +1,4 @@
-var database = require('../util/mySQLDatabase')
+var database = require('../../util/mySQLDatabase')
 function createShow(req, res, next) {
     database.pool.query(`insert into show  (name,start_time,end_time,screen_id,movie_id,layout_id,addedON) values
      ('${req.body.name}','${req.body.start_time}','${req.body.end_time}',${req.body.screen_id},${req.body.movie_id},${req.body.layout_id},NOW())`, (err, results, fields) => {
