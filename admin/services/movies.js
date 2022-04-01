@@ -1,6 +1,6 @@
 var database = require('../../util/mySQLDatabase')
 function createMovie(req, res, next) {
-    database.pool.query(`insert into movie  (name,rating,addedON) values ('${req.body.name}','${req.body.rating}',NOW())`, (err, results, fields) => {
+    database.ticketPool.query(`insert into movie  (name,rating,addedON) values ('${req.body.name}','${req.body.rating}',NOW())`, (err, results, fields) => {
         if (err) {
             res.status(500).json({ "message": err.code })
             return;

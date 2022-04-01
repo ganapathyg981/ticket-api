@@ -6,7 +6,7 @@ var service= require('../services/movies.js')
 /*
   Creates an user for the ticket system
 */
-router.post('/movie',(req,res,next)=>{
+router.post('/',(req,res,next)=>{
     service.createMovie(req,res,next);
   })
 
