@@ -1,6 +1,6 @@
 var database = require('../util/mySQLDatabase')
 function getCities(req, res, next) {
-    let options=database.getOptions('cities',req)
+    let options=database.getOptions('theatres',req)
 
     database.ticketPool.query(database.queryDbWithOptions(options), (err, results, fields) => {
         if (err) {
