@@ -9,10 +9,16 @@ var pool = mysql.createPool({
 
 
 var ticketPool = mysql.createPool({
-  connectionLimit: 5,
+  connectionLimit: 10,
   host: 'localhost',
   user: 'root',
-  password: 'password',
+  password: 'root',
+  database: 'ticket_app'
+});
+var ticketConnection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
   database: 'ticket_app'
 });
 
@@ -115,7 +121,7 @@ function getOptions(tableName,req){
 }
 
 
-module.exports = { pool, queryDb, ticketPool,queryDbWithOptions,getOptions }
+module.exports = { pool, queryDb, ticketPool,queryDbWithOptions,getOptions,ticketConnection }
 
 
 

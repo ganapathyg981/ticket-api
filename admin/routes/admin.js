@@ -13,6 +13,6 @@ router.use('/screen',screenRouter);
 router.use('/show',showRouter);
 router.use('/theatre',theatreRouter);
 router.use('/movie',movieRouter);
-// router.use('/seat',seatLayoutRouter);
+router.use('/seat',seatLayoutRouter);
 
 module.exports=router;

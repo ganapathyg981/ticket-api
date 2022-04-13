@@ -11,6 +11,7 @@ var adminRouter= require('./admin/routes/admin.js')
 var movieRouter=require('./routes/movies')
 var theatreRouter = require('./routes/theatres')
 var showRouter=require('./routes/shows')
+var seatRouter=require('./routes/seats')
 var app = express();
 
 // view engine setup
@@ -30,6 +31,7 @@ app.use('/admin',adminRouter);
 app.use('/movie',movieRouter);
 app.use('/theatre',theatreRouter);
 app.use('/show',showRouter)
+app.use('/seat',seatRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -181,26 +181,28 @@ let test={"data": [
     }
 ]}
 
-
-let output=[];
-let addedMovies= new Set();
-
-for(entity of test.data){
-
-  if(addedMovies.has(entity.movie_id)){
-
-  }
-  else{
-      output.push({
-          "movie_id": entity.movie_id,
-          "movie_name":entity.movie_name,
-          "shows":[{show_id:entity.id,show_time:entity.start_time}]
-      })
-      addedMovies.add(entity.movie_id)
-  }
+function theatreShowMapper(inp){
+    let output=[];
+    let addedMovies= new Set();
+    
+    for(entity of test.data){
+    
+      if(addedMovies.has(entity.movie_id)){
+                let current=output.filter(element=>{
+                    return element.movie_id==entity.movie_id;
+                })
+                console.log(current);
+                current[0].shows.push({show_id:entity.id,show_time:entity.start_time})
+      }
+      else{
+          output.push({
+              "movie_id": entity.movie_id,
+              "movie_name":entity.movie_name,
+              "shows":[{show_id:entity.id,show_time:entity.start_time}]
+          })
+          addedMovies.add(entity.movie_id)
+      }
+    }
+    return output
+    
 }
-console.log(addedMovies)
-console.log(
-    output
-)
-

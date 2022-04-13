@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.8",
+    "bluebird": "^3.7.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "json-url": "^3.0.0",
     "mongodb": "^4.4.1",
+    "mongoose": "^6.2.10",
     "morgan": "~1.9.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
@@ -23,6 +25,7 @@
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.23",
     "mocha": "^5.1.1",
     "supertest": "^3.0.0"
   }
